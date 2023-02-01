@@ -68,6 +68,6 @@ public class ImagesServices {
     }
 
     public List<ImagesGroup> getImages() {
-        return imagesGroupRepository.findAll();
+        return imagesGroupRepository.findByOrderByFechaDesc();
     }
 }
