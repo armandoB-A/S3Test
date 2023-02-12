@@ -23,8 +23,8 @@ public class S3Config {
         ProfileCredentialsProvider profileCredentialsProvider =
                 new ProfileCredentialsProvider();
         BasicAWSCredentials credentials = new BasicAWSCredentials(
-                profileCredentialsProvider.getCredentials().getAWSAccessKeyId(),
-                profileCredentialsProvider.getCredentials().getAWSSecretKey());
+                "AKIAXTNEF2MVHR7FM35U",
+                "qxEf8clHS7hWD6FZgAYBKw1EKZtYflcnZScC6ssF");
         return AmazonS3ClientBuilder.standard().withRegion(Regions.fromName(region))
                 .withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
     }
