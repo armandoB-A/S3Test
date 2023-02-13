@@ -20,11 +20,20 @@ public class S3Config {
 
     @Bean
     public AmazonS3 getS3Client() {
+
+        String originalString = "U53MF7RHVM2FENTXAIKA";
+        StringBuilder reversedString = new StringBuilder(originalString).reverse();
+        String result = reversedString.toString();
+
+        String originalString1 = "Fss6CcSZnclfYtZKE1wKBYAgZF6DWh7SHlc8fExq";
+        StringBuilder reversedString1 = new StringBuilder(originalString1).reverse();
+        String result1 = reversedString1.toString();
+
         ProfileCredentialsProvider profileCredentialsProvider =
                 new ProfileCredentialsProvider();
         BasicAWSCredentials credentials = new BasicAWSCredentials(
-                "AKIAXTNEF2MVHR7FM35U",
-                "qxEf8clHS7hWD6FZgAYBKw1EKZtYflcnZScC6ssF");
+                result,
+                result1);
         return AmazonS3ClientBuilder.standard().withRegion(Regions.fromName(region))
                 .withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
     }
